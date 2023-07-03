@@ -33,7 +33,7 @@ We used the model facebook/wav2vec2-large-100k-voxpopuli, a Facebook's Wav2Vec2 
       https://huggingface.co/facebook/wav2vec2-large-100k-voxpopuli
 
 ## Dataset
-We used * Animation by <a href="https://www.kaggle.com/datasets/andradaolteanu/gtzan-dataset-music-genre-classification">GTZAN</a>.
+We used the femiliar <a href="https://www.kaggle.com/datasets/andradaolteanu/gtzan-dataset-music-genre-classification">GTZAN</a> dataset.
 The dataset consists of 1000 audio tracks each 30 seconds long.
 It contains 10 genres, each represented by 100 tracks:
 The genrs are: blues, classical, country, disco, hiphop, jazz, metal, pop, reggae, rock.
