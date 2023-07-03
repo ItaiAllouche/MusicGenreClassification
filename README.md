@@ -26,11 +26,11 @@ Technion ECE 046211 - Deep Learning
 
 ## Background
 As our final project in Deep learning course, we chose a problem of genre classification of a given 30-sec track.
-We chose to solve this problem using transformer architecture.
+  We chose to solve this problem using transformer architecture.
 
 ## The Model
 We used the model facebook/wav2vec2-large-100k-voxpopuli, a Facebook's Wav2Vec2 large model pre-trained on the 100k unlabeled subset of VoxPopuli corpus.
-https://huggingface.co/facebook/wav2vec2-large-100k-voxpopuli
+      https://huggingface.co/facebook/wav2vec2-large-100k-voxpopuli
 
 ## Dataset
 We used * Animation by <a href="https://www.kaggle.com/datasets/andradaolteanu/gtzan-dataset-music-genre-classification">GTZAN</a>.
