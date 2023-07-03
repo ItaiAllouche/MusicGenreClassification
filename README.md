@@ -69,7 +69,7 @@ performance:
 
 78.85% accuracy on validation set
 
-<img src="/img/15sec_vaild.jpeg">
+<img src="/img/15sec_valid.jpeg">
 
 75.5% accuracy on test set
 
