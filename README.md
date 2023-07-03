@@ -63,9 +63,11 @@ This model was trained on 30 sec long tracks.
 performance:
 
 87% accuracy on validation set
+
 <img src="/img/30sec_vaild.png">
 
 77% accuracy on validation set
+
 <img src="/img/30sec_test.jpeg">
 
 ## 15_sec model
