@@ -64,7 +64,7 @@ performance:
 
 ## 15_sec model
 This model was trained on 15 sec long tracks.
-Each 30 sec track was divided to 2 sub-track on 15 sec long
+Each 30-sec track was divided into 2 sub-track on 15 sec long
 performance:
 
 78.85% accuracy on validation set
@@ -77,7 +77,7 @@ performance:
 
 ## 10_sec model
 This model was trained on 10 sec long tracks.
-Each 30 sec track was divided to 3 sub-track on 10 sec long
+Each 30-sec track was divided into 3 sub-track on 10 sec long
 performance:
 
 % accuracy on validation set
