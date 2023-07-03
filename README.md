@@ -58,7 +58,7 @@ performance:
 
 <img src="/img/30sec_vaild.png">
 
-77% accuracy on validation set
+77% accuracy on test set
 
 <img src="/img/30sec_test.jpeg">
 
@@ -71,7 +71,7 @@ performance:
 
 <img src="/img/15sec_vaild.jpeg">
 
-75.5% accuracy on validation set
+75.5% accuracy on test set
 
 <img src="/img/15sec_test.jpeg">
 
@@ -83,7 +83,7 @@ performance:
 % accuracy on validation set
 
 
-% accuracy on validation set
+% accuracy on test set
 
 
 
