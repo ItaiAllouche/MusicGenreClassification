@@ -45,17 +45,10 @@ The tracks are all 22050Hz Mono 16-bit audio files in .wav format.
 |File       | Purpsoe |
 |----------------|---------|
 |`img`| Contains images for README.md file  |
-|`ee046211_tutorial_01_machine_learning_recap.ipynb/pdf`| Supervised and Unsupervised Learning, Model Evaluation, Bias-Variance Tradeoff, Feature Scaling, Linear Regression, Gradient Descent, Regularization (Ridge, LASSO)|
-|`ee046211_tutorial_02_single_neuron_recap.ipynb/pdf`| Discriminative models, Perceptron, Logistic Regression (also in PyTorch), Softmax Regression, Activation functions|
-|`ee046211_tutorial_03_optimization_gradient_descent.ipynb/pdf`|Unimodal functions, Convexity, Hessain, Gradient Descent, SGD, Learning Rate, LR Scheculing / Annealing, Momentum, Nesterov Momentum, Adaptive Learning Rate Methods, Adagrad, RMSprop, Adam|
-|`ee046211_tutorial_04_differentiation_autograd.ipynb/pdf`|Lagrange Multipliers, Automatic Differentiation (AutoDiff) Forward Mode and Reverese Mode, PyTorch Autograd|
-|`ee046211_tutorial_05_multilayer_nn.ipynb/pdf`|Multi-Layer Perceptron (MLP), Backpropagation, Neural Netwroks in PyTorch, Weights Initialization - Xavier (Glorot), Kaiming (He), Deep Double Descent|
-|`ee046211_tutorial_06_convnets_visual_tasks.ipynb/pdf`|2D Convolution (Cross-corelation), Convolution-based Classification, Convolutional Neural Networks (CNNs), Regularization and Overfitting, Dropout, Data Augmentation, CIFAR-10 dataset, Visualizing Filters, Applications of CNNs, The problems with CNNs (adversarial attacks, poor generalization, fairness-undesirable biases)|
-|`ee046211_tutorial_07_sequential_tasks_rnn.ipynb/pdf`|Sequential Tasks, Natural Language Processing (NLP), Langiage Model, Perplexity, BLEU,  Recurrent Neural Network (RNN), Backpropagation Through Time (BPTT), Long Term Short Memory (LSTM), Gated Recurrent Unit (GRU), (Self Multi-head) Attention, Transformer, BERT and GPT, Teacher Forcing, torchtext, Sentiment Analysis|
-|`ee046211_tutorial_08_training_methods.ipynb/pdf`|Feature Scaling, Normalization, Standardization, Batch Normalization, Layer Normalization, Instance Normalization, Group Normalization, Vanishing Gradients, Exploding Gradients, Skip-Connection, Residual Nlock, ResNet, DenseNet, U-Net, Hyper-parameter Tuning: Grid Search, Random Search, Bayesian Tuning, Optuna with PyTorch|
-|`ee046211_tutorial_09_self_supervised_representation_learning.ipynb/pdf`|Transfer Learning, Domain Adaptation, Pre-trained Networks, Sim2Real, BERT, Representation Learning, Self-Supervised Learning, Autoencoders, Contrastive Learning, Contrastive Predictive Coding (CPC), Simple Framework for Contrastive Learning of Visual Representations (SimCLR), Momentum Contrast (MoCo), Bootstrap Your Own Latent (BYOL)|
-|`ee046211_tutorial_10_compression_pruning_amp.ipynb/pdf`|Resource Efficiency in DL, Automatic Mixed Precision (AMP), Quantization (Dynamic, Static), Quantization Aware Training (QAT), Pruning, The Lottery Ticket Hypothesis|
-|`pytorch_maximize_cpu_gpu_utilization.ipynb/pdf`|Tips and Tricks for efficient coding in PyTorch, maximizing the CPU and GPU utilization|
+|`30sec_model.ipynb`| model which was trained on tracks 30 sec long.|
+|`15sec_model.ipynb`| model which was trained on tracks 15 sec long.|
+|`10sec_model.ipynb`| model which was trained on tracks 10 sec long.|
+|`eval_model.ipynb`| evaluate the model.|
 
 
 ## 30_sec model
