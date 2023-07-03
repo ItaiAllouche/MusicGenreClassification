@@ -69,11 +69,11 @@ performance:
 
 78.85% accuracy on validation set
 
-<img src="/img/15sec_vaild.png">
+<img src="/img/15sec_vaild.jpeg">
 
 75.5% accuracy on validation set
 
-<img src="/img/15sec_test.png">
+<img src="/img/15sec_test.jpeg">
 
 ## 10_sec model
 This model was trained on 10 sec long tracks.
