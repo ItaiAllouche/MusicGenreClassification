@@ -17,6 +17,8 @@ Technion ECE 046211 - Deep Learning
   * * [Dataset](#dataset)
   * [Agenda](#agenda)
   * [30_sec model](#30_sec-model)
+  * [15_sec model](#15_sec-model)
+  * [10_sec model](#10_sec-model)
     + [Running Online](#running-online)
     + [Running Locally](#running-locally)
   * [Installation Instructions](#installation-instructions)
@@ -40,9 +42,9 @@ The tracks are all 22050Hz Mono 16-bit audio files in .wav format.
 
 ## Agenda
 
-|File       | Topics Covered |
+|File       | Purpsoe |
 |----------------|---------|
-|`Setting Up The Working Environment.pdf`| Guide for installing Anaconda locally with Python 3 and PyTorch, integration with PyCharm and using GPU on Google Colab |
+|`img`| Contains images for README.md file  |
 |`ee046211_tutorial_01_machine_learning_recap.ipynb/pdf`| Supervised and Unsupervised Learning, Model Evaluation, Bias-Variance Tradeoff, Feature Scaling, Linear Regression, Gradient Descent, Regularization (Ridge, LASSO)|
 |`ee046211_tutorial_02_single_neuron_recap.ipynb/pdf`| Discriminative models, Perceptron, Logistic Regression (also in PyTorch), Softmax Regression, Activation functions|
 |`ee046211_tutorial_03_optimization_gradient_descent.ipynb/pdf`|Unimodal functions, Convexity, Hessain, Gradient Descent, SGD, Learning Rate, LR Scheculing / Annealing, Momentum, Nesterov Momentum, Adaptive Learning Rate Methods, Adagrad, RMSprop, Adam|
@@ -59,6 +61,36 @@ The tracks are all 22050Hz Mono 16-bit audio files in .wav format.
 ## 30_sec model
 This model was trained on 30 sec long tracks.
 performance:
+
+87% accuracy on validation set
+<img src="/img/30sec_vaild.png">
+
+77% accuracy on validation set
+<img src="/img/30sec_test.jpeg">
+
+## 15_sec model
+This model was trained on 15 sec long tracks.
+Each 30 sec track was divided to 2 sub-track on 15 sec long
+performance:
+
+% accuracy on validation set
+
+
+% accuracy on validation set
+
+
+## 10_sec model
+This model was trained on 10 sec long tracks.
+Each 30 sec track was divided to 3 sub-track on 10 sec long
+performance:
+
+% accuracy on validation set
+
+
+% accuracy on validation set
+
+
+
 
 
 
