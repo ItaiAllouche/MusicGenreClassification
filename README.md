@@ -22,7 +22,6 @@ Technion ECE 046211 - Deep Learning
     + [Running Online](#running-online)
     + [Running Locally](#running-locally)
   * [Installation Instructions](#installation-instructions)
-    + [Libraries to Install](#libraries-to-install)
 
 ## Background
 As our final project in Deep learning course, we chose a problem of genre classification of a given 30-sec track.
@@ -131,25 +130,6 @@ For the complete guide, with step-by-step images, please consult `Setting Up The
 In Windows open `Anaconda Prompt` from the start menu, in Mac/Linux open the terminal and run `conda create --name deep_learn`. Full guide at https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#creating-an-environment-with-commands
 4. To activate the environment, open the terminal (or `Anaconda Prompt` in Windows) and run `conda activate deep_learn`
 5. Install the required libraries according to the table below (to search for a specific library and the corresponding command you can also look at https://anaconda.org/)
-
-### Libraries to Install
-
-|Library         | Command to Run |
-|----------------|---------|
-|`Jupyter Notebook`|  `conda install -c conda-forge notebook`|
-|`numpy`|  `conda install -c conda-forge numpy`|
-|`matplotlib`|  `conda install -c conda-forge matplotlib`|
-|`pandas`|  `conda install -c conda-forge pandas`|
-|`scipy`| `conda install -c anaconda scipy `|
-|`scikit-learn`|  `conda install -c conda-forge scikit-learn`|
-|`seaborn`|  `conda install -c conda-forge seaborn`|
-|`tqdm`| `conda install -c conda-forge tqdm`|
-|`opencv`| `conda install -c conda-forge opencv`|
-|`optuna`| `pip install optuna`|
-|`pytorch` (cpu)| `conda install pytorch torchvision torchaudio cpuonly -c pytorch` |
-|`pytorch` (gpu)| `conda install pytorch torchvision torchaudio cudatoolkit=10.2 -c pytorch` |
-|`torchtext`| `conda install -c pytorch torchtext`|
-
 
 5. To open the notebooks, open Ananconda Navigator or run `jupyter notebook` in the terminal (or `Anaconda Prompt` in Windows) while the `deep_learn` environment is activated.
 
