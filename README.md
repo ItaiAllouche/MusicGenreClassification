@@ -45,9 +45,8 @@ The tracks are all 22050Hz Mono 16-bit audio files in .wav format.
 |File       | Purpsoe |
 |----------------|---------|
 |`img`| Contains images for README.md file  |
-|`30sec_model.ipynb`| model which was trained on tracks 30 sec long.|
-|`15sec_model.ipynb`| model which was trained on tracks 15 sec long.|
-|`10sec_model.ipynb`| model which was trained on tracks 10 sec long.|
+|`train_30s_model.ipynb`| train the model on 30 sec-long tracks |
+|`train_15s_model.ipynb`| train the model on 15 sec-long tracks  |
 |`eval_model.ipynb`| evaluate the model.|
 
 
