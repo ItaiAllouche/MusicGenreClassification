@@ -60,46 +60,60 @@ The tracks are all 22050Hz Mono 16-bit audio files in .wav format.
 |`train_10s_model.py`| train the model on 10 sec-long tracks  |
 |`eval_model.py`| evaluate the model.|
 
-
+<br>
 ## 30_sec model
 This model was trained on 30 sec long tracks.
+<br>
 performance:
-
+<br>
 87% accuracy on validation set
+<br>
 
 <img src="/img/30sec_valid.jpeg">
+<br>
 
 77% accuracy on test set
+<br>
 
 <img src="/img/30sec_test.jpeg">
 
+<br>
 ## 15_sec model
+<br>
 This model was trained on 15 sec long tracks.
 Each 30-sec track was divided into 2 sub-track on 15 sec long
+<br>
 performance:
-
+<br>
 78.85% accuracy on validation set
+<br>
 
 <img src="/img/15sec_valid.jpeg">
+<br>
 
 75.5% accuracy on test set
+<br>
 
 <img src="/img/15sec_test.jpeg">
+<br>
 
 ## 10_sec model
 This model was trained on 10 sec long tracks.
 Each 30-sec track was divided into 3 sub-track on 10 sec long
+<br>
 performance:
 
+<br>
 78% accuracy on validation set
+<br>
 
 <img src="/img/10sec_valid.jpeg">
-
+<br>
 
 74.5% accuracy on test set
-
+<br>
 <img src="/img/10sec_test.jpeg">
-
+<br>
 
 
 
