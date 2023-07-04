@@ -59,6 +59,7 @@ The tracks are all 22050Hz Mono 16-bit audio files in .wav format.
 |`train_15s_model.py`| train the model on 15 sec-long tracks  |
 |`train_10s_model.py`| train the model on 10 sec-long tracks  |
 |`eval_model.py`| evaluate the model.|
+|`rolling_stones_exp.wav`| audio file for evaluate the model.|
 
 ## 30_sec model
 This model was trained on 30 sec long tracks.
@@ -116,17 +117,14 @@ performance:
 ```bash
 docker run --name gtzan --rm -it --ipc=host --gpus=all -v $PWD:/home huggingface/transformers-pytorch-gpu python3 /home/train_30s_model.py
 ```
-
 ### Run the model
 Go to the <a href="https://www.kaggle.com/datasets/andradaolteanu/gtzan-dataset-music-genre-classification">Model</a> in hugging face.
 <br>
 <img src="/img/run_in_hugging_face.jpeg">
-
-Press "Download ZIP" under the green button `Clone or download` or use `git` to clone the repository using the 
-following command: `git clone https://github.com/taldatech/ee046211-deep-learning.git` (in cmd/PowerShell in Windows or in the Terminal in Linux/Mac)
-
-Open the folder in Jupyter Notebook (it is recommended to use Anaconda). Installation instructions can be found in `Setting Up The Working Environment.pdf`.
-
+<br>
+Choose your wishful song to be evaluated.
+<br>
+*Note that hugging face server supports tracks up to 2-3 minutes*
 
 ## Installation Instructions
 
