@@ -117,7 +117,7 @@ performance:
 docker run --name gtzan --rm -it --ipc=host --gpus=all -v $PWD:/home huggingface/transformers-pytorch-gpu python3 /home/train_30s_model.py
 ```
 ### Run the model
-Go to the <a href="https://www.kaggle.com/datasets/andradaolteanu/gtzan-dataset-music-genre-classification">Model</a> in hugging face.
+Open to the <a href="https://huggingface.co/adamkatav/wav2vec2_100k_gtzan_30s_model">Model</a> in hugging face.
 <br>
 <img src="/img/run_in_hugging_face.jpeg">
 <br>
