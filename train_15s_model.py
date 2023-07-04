@@ -98,9 +98,4 @@ dataset_test = dataset_test.map(preprocess_function, remove_columns="audio", bat
 label_col = 'genre'
 dataset_test = dataset_test.rename_column(label_col, "label")
 result = trainer.evaluate(eval_dataset=dataset_test)
-
-
-
-
-
-
+print(result)
