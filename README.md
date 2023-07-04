@@ -25,19 +25,28 @@ Technion ECE 046211 - Deep Learning
 
 ## Background
 As our final project in Deep learning course, we chose a problem of genre classification of a given 30-sec track.
-  We chose to solve this problem using Wav2Vec2 transformer architecture, the data is time series, therefore we assume
-  a transformer architecture will suit the task.
+<br>
+We chose to solve this problem using Wav2Vec2 transformer architecture.
+<br>
+the data is time series, therefore we assume a transformer architecture will suit the task.
   
 
 ## The Model
-We used the model facebook/wav2vec2-large-100k-voxpopuli, a Facebook's Wav2Vec2 large model pre-trained on the 100k unlabeled subset of VoxPopuli corpus.
-      https://huggingface.co/facebook/wav2vec2-large-100k-voxpopuli
+We used the model facebook/wav2vec2-large-100k-voxpopuli,
+<br>
+a Facebook's Wav2Vec2 large model pre-trained on the 100k unlabeled subset of VoxPopuli corpus.
+<br>
+https://huggingface.co/facebook/wav2vec2-large-100k-voxpopuli
 
 ## Dataset
 We used the femiliar <a href="https://www.kaggle.com/datasets/andradaolteanu/gtzan-dataset-music-genre-classification">GTZAN</a> dataset.
+<br>
 The dataset consists of 1000 audio tracks each 30 seconds long.
+<br>
 It contains 10 genres, each represented by 100 tracks:
+<br>
 The genrs are: blues, classical, country, disco, hiphop, jazz, metal, pop, reggae, rock.
+<br>
 The tracks are all 22050Hz Mono 16-bit audio files in .wav format.
 
 
