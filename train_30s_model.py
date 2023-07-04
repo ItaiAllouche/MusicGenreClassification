@@ -5,6 +5,7 @@ import numpy as np
 from transformers import AutoModelForAudioClassification, TrainingArguments, Trainer
 
 
+#Download dataset and split for train and test
 dataset_name = 'marsyas/gtzan'
 dataset = load_dataset(dataset_name)['train']
 dataset = dataset.train_test_split(test_size=0.2, seed=42)
@@ -12,6 +13,7 @@ dataset_test = dataset['test']
 dataset = dataset['train']
 dataset = dataset.train_test_split(test_size=0.25, seed=42)
 
+#Download and apply pre processing function for wav2vec2
 model_name = 'facebook/wav2vec2-base-100k-voxpopuli'
 feature_extractor = AutoFeatureExtractor.from_pretrained(model_name)
 
@@ -21,11 +23,13 @@ def preprocess_function(examples):
         audio_arrays, sampling_rate=feature_extractor.sampling_rate, max_length=16000*30, truncation=True)
     return inputs
 
+#Extract labels from dataset
 labels = dataset["train"].features['genre'].names
 label2id, id2label = dict(), dict()
 for i, label in enumerate(labels):
     label2id[label] = str(i)
     id2label[str(i)] = label
+
 
 encoded_minds = dataset.map(preprocess_function, remove_columns="audio", batched=True)
 label_col = 'genre'
@@ -42,6 +46,7 @@ model = AutoModelForAudioClassification.from_pretrained(
     model_name, num_labels=num_labels, label2id=label2id, id2label=id2label
 )
 
+#Start training
 training_args = TrainingArguments(
     output_dir="wav2vec2_100k_gtzan_30s_model",
     evaluation_strategy="epoch",
@@ -68,6 +73,8 @@ trainer = Trainer(
     compute_metrics=compute_metrics,
 )
 trainer.train()
+
+#Evaluate on test set
 dataset_test = dataset_test.map(preprocess_function, remove_columns="audio", batched=True)
 label_col = 'genre'
 dataset_test = dataset_test.rename_column(label_col, "label")
