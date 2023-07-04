@@ -96,7 +96,7 @@ performance:
 <img src="/img/10sec_valid.jpeg">
 
 
-% accuracy on test set
+74.5% accuracy on test set
 
 <img src="/img/10sec_test.jpeg">
 
