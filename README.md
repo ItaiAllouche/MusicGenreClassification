@@ -21,7 +21,6 @@ Technion ECE 046211 - Deep Learning
   * [10_sec model](#10_sec-model)
     + [Train the 30s model](#train-the-30s-model)
     + [Run the model](#run-the-model)
-  * [Installation Instructions](#installation-instructions)
 
 ## Background
 As our final project in Deep learning course, we chose a problem of genre classification of a given 30-sec track.
@@ -125,19 +124,6 @@ Go to the <a href="https://www.kaggle.com/datasets/andradaolteanu/gtzan-dataset-
 Choose your wishful song to be evaluated.
 <br>
 *Note that hugging face server supports tracks up to 2-3 minutes*
-
-## Installation Instructions
-
-For the complete guide, with step-by-step images, please consult `Setting Up The Working Environment.pdf`
-
-1. Get Anaconda with Python 3, follow the instructions according to your OS (Windows/Mac/Linux) at: https://www.anaconda.com/products/individual
-2. Install the basic packages using the provided `environment.yml` file by running: `conda env create -f environment.yml` which will create a new conda environment named `deep_learn`. If you did this, you will only need to install PyTorch, see the table below.
-3. Alternatively, you can create a new environment for the course and install packages from scratch:
-In Windows open `Anaconda Prompt` from the start menu, in Mac/Linux open the terminal and run `conda create --name deep_learn`. Full guide at https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#creating-an-environment-with-commands
-4. To activate the environment, open the terminal (or `Anaconda Prompt` in Windows) and run `conda activate deep_learn`
-5. Install the required libraries according to the table below (to search for a specific library and the corresponding command you can also look at https://anaconda.org/)
-
-5. To open the notebooks, open Ananconda Navigator or run `jupyter notebook` in the terminal (or `Anaconda Prompt` in Windows) while the `deep_learn` environment is activated.
 
 
 
