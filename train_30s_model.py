@@ -67,8 +67,9 @@ trainer = Trainer(
     tokenizer=feature_extractor,
     compute_metrics=compute_metrics,
 )
-
+trainer.train()
 dataset_test = dataset_test.map(preprocess_function, remove_columns="audio", batched=True)
 label_col = 'genre'
 dataset_test = dataset_test.rename_column(label_col, "label")
 result = trainer.evaluate(eval_dataset=dataset_test)
+print(result)
