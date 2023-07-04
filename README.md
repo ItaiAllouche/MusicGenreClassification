@@ -58,7 +58,7 @@ The tracks are all 22050Hz Mono 16-bit audio files in .wav format.
 |`train_15s_model.py`| train the model on 15 sec-long tracks  |
 |`train_10s_model.py`| train the model on 10 sec-long tracks  |
 |`eval_model.py`| evaluate the model.|
-|`rolling_stones_exp.wav`| audio file for evaluate the model.|
+|`rolling_stones.wav`| audio file for evaluate the model.|
 
 ## 30_sec model
 This model was trained on 30 sec long tracks.
