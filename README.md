@@ -16,27 +16,26 @@ Technion ECE 046211 - Deep Learning
   * [The Model](#the-model)
   * * [Dataset](#dataset)
   * [Agenda](#agenda)
-  * [30_sec model](#30_sec-model)
-  * [15_sec model](#15_sec-model)
-  * [10_sec model](#10_sec-model)
+  * [30s model](#30s-model)
+  * [15s model](#15s-model)
+  * [10s model](#10s-model)
     + [Train the 30s model](#train-the-30s-model)
     + [Run the model - from huggingface](#Run-the-model---from-huggingface)
     + [Run the model - using python](#Run-the-model---using-python)
 
 ## Background
-As our final project in Deep learning course, we chose a problem of genre classification of a given 30-sec track.
+For our final project in the Technion DL course (046211), we chose to classify music genres over the GTZAN dataset.
 <br>
-We chose to solve this problem using Wav2Vec2 transformer architecture.
+The approach to the problem is using a pre-trained Wav2Vec2 transformer model.
 <br>
-the data is time series, therefore we assume a transformer architecture will suit the task.
+As appose to most existing models, a transformer will use the raw time series data which is the reason we predicted an improvement over existing methods
   
 
 ## The Model
-We used the model facebook/wav2vec2-large-100k-voxpopuli,
+We used the model <a href="https://huggingface.co/facebook/wav2vec2-large-100k-voxpopuli">facebook/wav2vec2-large-100k-voxpopuli</a> from huggingface,
+Facebooks Wav2Vec2 model pre-trained on 100k unlabeled subset of speech data.
 <br>
-a Facebook's Wav2Vec2 large model pre-trained on the 100k unlabeled subset of VoxPopuli corpus.
-<br>
-https://huggingface.co/facebook/wav2vec2-large-100k-voxpopuli
+
 
 ## Dataset
 We used the femiliar <a href="https://www.kaggle.com/datasets/andradaolteanu/gtzan-dataset-music-genre-classification">GTZAN</a> dataset.
@@ -45,7 +44,7 @@ The dataset consists of 1000 audio tracks each 30 seconds long.
 <br>
 It contains 10 genres, each represented by 100 tracks:
 <br>
-The genrs are: blues, classical, country, disco, hiphop, jazz, metal, pop, reggae, rock.
+The genres are: `blues, classical, country, disco, hiphop, jazz, metal, pop, reggae, rock`
 <br>
 The tracks are all 22050Hz Mono 16-bit audio files in .wav format.
 
@@ -55,14 +54,14 @@ The tracks are all 22050Hz Mono 16-bit audio files in .wav format.
 |File       | Purpsoe |
 |----------------|---------|
 |`img`| Contains images for README.md file  |
-|`train_30s_model.py`| train the model on 30 sec-long tracks |
-|`train_15s_model.py`| train the model on 15 sec-long tracks  |
-|`train_10s_model.py`| train the model on 10 sec-long tracks  |
-|`eval_model.py`| evaluate the model.|
-|`rolling_stones.wav`| audio file for evaluate the model.|
+|`train_30s_model.py`| train the model on 30s tracks |
+|`train_15s_model.py`| train the model on 15s tracks  |
+|`train_10s_model.py`| train the model on 10s tracks  |
+|`eval_model.py`| evaluate the model|
+|`rolling_stones.wav`| example audio file|
 
-## 30_sec model
-This model was trained on 30 sec long tracks.
+## 30s model
+The model was trained on 30s tracks.
 <br>
 performance:
 <br>
@@ -77,10 +76,10 @@ performance:
 
 <img src="/img/30sec_test.jpeg">
 
-## 15_sec model
+## 15s model
 <br>
-This model was trained on 15 sec long tracks.
-Each 30-sec track was divided into 2 sub-track on 15 sec long
+The model was trained on 15s long tracks.
+Each 30s track was divided into 2 sub-tracks 15s long
 <br>
 performance:
 <br>
@@ -95,9 +94,9 @@ performance:
 
 <img src="/img/15sec_test.jpeg">
 
-## 10_sec model
-This model was trained on 10 sec long tracks.
-Each 30-sec track was divided into 3 sub-track on 10 sec long
+## 10s model
+The model was trained on 10s tracks.
+Each 30s track was divided into 3 sub-tracks 10s long
 <br>
 performance:
 
@@ -125,8 +124,13 @@ Open the <a href="https://huggingface.co/adamkatav/wav2vec2_100k_gtzan_30s_model
 *Note that hugging face server supports tracks up to 2-3 minutes*
 
 ### Run the model - using python
+##### On GPU:
 ```bash
 docker run --name gtzan --rm -it --ipc=host --gpus=all -v $PWD:/home huggingface/transformers-pytorch-gpu
+```
+##### On CPU:
+```bash
+docker run --name gtzan --rm -it -v $PWD:/home huggingface/transformers-pytorch-gpu
 ```
 In the container either use a python script file or via the interactive interpreter:
 ```python
