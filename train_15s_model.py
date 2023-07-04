@@ -5,6 +5,7 @@ import evaluate
 import numpy as np
 from transformers import AutoModelForAudioClassification, TrainingArguments, Trainer
 
+#Download dataset and split for train and test
 dataset_name = 'marsyas/gtzan'
 dataset_train1 = load_dataset(dataset_name)['train'].train_test_split(test_size=0.2, seed=42)['train']
 dataset_train2 = load_dataset(dataset_name)['train'].train_test_split(test_size=0.2, seed=42)['train']
@@ -23,6 +24,7 @@ def slice_last_15s(example):
     example['audio']['array'] = example['audio']['array'][15*sampling_rate:]
     return example
 
+#Slice the tracks for 10s fragments
 dataset_train1.map(slice_first_15s)
 dataset_train2.map(slice_last_15s)
 dataset_test1.map(slice_first_15s)
@@ -31,10 +33,9 @@ dataset_test2.map(slice_last_15s)
 dataset = DatasetDict({ 'train':concatenate_datasets([dataset_train1['train'], dataset_train2['train']]), 'test':concatenate_datasets([dataset_train1['test'], dataset_train2['test']])})
 dataset_test = concatenate_datasets([dataset_test1, dataset_test2])
 
+#Download and apply pre processing function for wav2vec2
 model_name = 'facebook/wav2vec2-base-100k-voxpopuli'
-
 feature_extractor = AutoFeatureExtractor.from_pretrained(model_name)
-
 def preprocess_function(examples):
     audio_arrays = [x["array"] for x in examples["audio"]]
     inputs = feature_extractor(
@@ -59,12 +60,13 @@ def compute_metrics(eval_pred):
     predictions = np.argmax(eval_pred.predictions, axis=1)
     return accuracy.compute(predictions=predictions, references=eval_pred.label_ids)
 
-
+#Extract labels from dataset
 num_labels = len(id2label)
 model = AutoModelForAudioClassification.from_pretrained(
     model_name, num_labels=num_labels, label2id=label2id, id2label=id2label
 )
 
+#Start training
 output_model_name = 'wav2vec2_100k_15s_augmentation_gtzan_model'
 training_args = TrainingArguments(
     output_dir=output_model_name,
@@ -94,6 +96,7 @@ trainer = Trainer(
 
 trainer.train()
 
+#Evaluate on test set
 dataset_test = dataset_test.map(preprocess_function, remove_columns="audio", batched=True)
 label_col = 'genre'
 dataset_test = dataset_test.rename_column(label_col, "label")
