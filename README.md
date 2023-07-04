@@ -14,12 +14,16 @@ Technion ECE 046211 - Deep Learning
 - [MusicGenreClassification](#MusicGenreClassification)
   * [Background](#background)
   * [The Model](#the-model)
-  * * [Dataset](#dataset)
+  * [Dataset](#dataset)
   * [Agenda](#agenda)
-  * [30s model](#30s-model)
-  * [15s model](#15s-model)
-  * [10s model](#10s-model)
+  * [Results](#Results)
+    + [30s model](#30s-model)
+    + [15s model](#15s-model)
+    + [10s model](#10s-model)
+  * [Docker](#Docker)
+  * [Training](#Training)
     + [Train 30s model](#train-30s-model)
+  * [Run the model](#Run-the-model)
     + [Run the model - from huggingface 🤗](#run-the-model---from-huggingface-)
     + [Run the model - using python](#Run-the-model---using-python)
 
@@ -59,8 +63,8 @@ The tracks are all 22050Hz Mono 16-bit audio files in .wav format.
 |`train_10s_model.py`| train the model on 10s tracks  |
 |`eval_model.py`| evaluate the model|
 |`rolling_stones.wav`| example audio file|
-
-## 30s model
+## Results
+### 30s model
 The model was trained on 30s tracks.
 <br>
 performance:
@@ -76,7 +80,7 @@ performance:
 
 <img src="/img/30sec_test.jpeg">
 
-## 15s model
+### 15s model
 <br>
 The model was trained on 15s long tracks.
 Each 30s track was divided into 2 sub-tracks 15s long
@@ -94,7 +98,7 @@ performance:
 
 <img src="/img/15sec_test.jpeg">
 
-## 10s model
+### 10s model
 The model was trained on 10s tracks.
 Each 30s track was divided into 3 sub-tracks 10s long
 <br>
@@ -111,24 +115,32 @@ performance:
 <br>
 <img src="/img/10sec_test.jpeg">
 <br>
-
+## Docker
+The project is intended to run in huggingface docker image
+<br>
+For instructions on how to install docker:
+<br>
+<a href="https://docs.docker.com/engine/install/">https://docs.docker.com/engine/install/</a>
+## Training
 ### Train 30s model
+Replace `train_30s_model.py` with your chosen model
 ```bash
 docker run --name gtzan --rm -it --ipc=host --gpus=all -v $PWD:/home huggingface/transformers-pytorch-gpu python3 /home/train_30s_model.py
 ```
+This command spins up a docker container from the official huggingface image, mounts the repo directory and run the training script
+## Running
 ### Run the model - from huggingface 🤗
 Open the <a href="https://huggingface.co/adamkatav/wav2vec2_100k_gtzan_30s_model">Model</a> in hugging face.
 <br>
 <img src="/img/run_in_hugging_face.jpeg">
 <br>
 *Note that hugging face server supports tracks up to 2-3 minutes*
-
 ### Run the model - using python
-##### On GPU:
+#### On GPU:
 ```bash
 docker run --name gtzan --rm -it --ipc=host --gpus=all -v $PWD:/home huggingface/transformers-pytorch-gpu
 ```
-##### On CPU:
+#### On CPU:
 ```bash
 docker run --name gtzan --rm -it -v $PWD:/home huggingface/transformers-pytorch-gpu
 ```
