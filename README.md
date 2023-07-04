@@ -57,6 +57,7 @@ The tracks are all 22050Hz Mono 16-bit audio files in .wav format.
 |`img`| Contains images for README.md file  |
 |`train_30s_model.py`| train the model on 30 sec-long tracks |
 |`train_15s_model.py`| train the model on 15 sec-long tracks  |
+|`train_10s_model.py`| train the model on 10 sec-long tracks  |
 |`eval_model.py`| evaluate the model.|
 
 
