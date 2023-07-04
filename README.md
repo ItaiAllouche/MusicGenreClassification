@@ -121,7 +121,7 @@ Open to the <a href="https://huggingface.co/adamkatav/wav2vec2_100k_gtzan_30s_mo
 <br>
 <img src="/img/run_in_hugging_face.jpeg">
 <br>
-Choose your wishful song to be evaluated.
+Choose your wishful song to be genre classifed.
 <br>
 *Note that hugging face server supports tracks up to 2-3 minutes*
 
