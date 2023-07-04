@@ -20,7 +20,8 @@ Technion ECE 046211 - Deep Learning
   * [15_sec model](#15_sec-model)
   * [10_sec model](#10_sec-model)
     + [Train the 30s model](#train-the-30s-model)
-    + [Run the model](#run-the-model)
+    + [Run the model - from huggingface](#Run-the-model---from-huggingface)
+    + [Run the model - using python](#Run-the-model---using-python)
 
 ## Background
 As our final project in Deep learning course, we chose a problem of genre classification of a given 30-sec track.
@@ -112,58 +113,33 @@ performance:
 <img src="/img/10sec_test.jpeg">
 <br>
 
-### Train the 30s model
+### Train 30s model
 ```bash
 docker run --name gtzan --rm -it --ipc=host --gpus=all -v $PWD:/home huggingface/transformers-pytorch-gpu python3 /home/train_30s_model.py
 ```
-### Run the model
-Open to the <a href="https://huggingface.co/adamkatav/wav2vec2_100k_gtzan_30s_model">Model</a> in hugging face.
+### Run the model - from huggingface 🤗
+Open the <a href="https://huggingface.co/adamkatav/wav2vec2_100k_gtzan_30s_model">Model</a> in hugging face.
 <br>
 <img src="/img/run_in_hugging_face.jpeg">
 <br>
-Choose your wishful song to be genre classifed.
-<br>
 *Note that hugging face server supports tracks up to 2-3 minutes*
 
+### Run the model - using python
+```bash
+docker run --name gtzan --rm -it --ipc=host --gpus=all -v $PWD:/home huggingface/transformers-pytorch-gpu
+```
+In the container either use a python script file or via the interactive interpreter:
+```python
+from transformers import pipeline
+import torchaudio
+import sys
+MODEL_NAME = 'adamkatav/wav2vec2_100k_gtzan_30s_model'
+SONG_IN_REPO_DIR_PATH = '/home/rolling_stones.wav'
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+pipe = pipeline(model=MODEL_NAME)
+audio_array,sample_freq = torchaudio.load(SONG_IN_REPO_DIR_PATH)
+resample = torchaudio.transforms.Resample(orig_freq=sample_freq)
+audio_array = audio_array.mean(axis=0).squeeze().numpy()
+output = pipe(audio_array)
+print(output)
+```
