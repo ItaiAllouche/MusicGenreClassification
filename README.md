@@ -86,6 +86,8 @@ performance:
 
 % accuracy on test set
 
+<img src="/img/10sec_test.jpeg">
+
 
 
 
