@@ -79,7 +79,9 @@ This model was trained on 10 sec long tracks.
 Each 30-sec track was divided into 3 sub-track on 10 sec long
 performance:
 
-% accuracy on validation set
+78% accuracy on validation set
+
+<img src="/img/10sec_valid.jpeg">
 
 
 % accuracy on test set
