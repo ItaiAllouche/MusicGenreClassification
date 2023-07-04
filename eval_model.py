@@ -3,12 +3,14 @@ import numpy as np
 from datasets import load_dataset
 from transformers import AutoFeatureExtractor, TrainingArguments, Trainer, AutoModelForAudioClassification
 
+#Download dataset and split for test
 accuracy = evaluate.load("accuracy")
 dataset_name = 'marsyas/gtzan'
 dataset = load_dataset(dataset_name)['train']
 dataset = dataset.train_test_split(test_size=0.2, seed=42)
 dataset = dataset['test']
 
+#Download and apply pre processing function for wav2vec2
 model_name = 'adamkatav/wav2vec2_100k_gtzan_30s_model'
 from transformers import AutoFeatureExtractor
 feature_extractor = AutoFeatureExtractor.from_pretrained(model_name)
@@ -23,6 +25,7 @@ encoded_minds = dataset.map(preprocess_function, remove_columns="audio", batched
 label_col = 'genre'
 encoded_minds = encoded_minds.rename_column(label_col, "label")
 
+#Evaluate on test set
 model = AutoModelForAudioClassification.from_pretrained(model_name)
 training_args = TrainingArguments(
     output_dir="wav2vec2_100k_gtzan_30s_model",
