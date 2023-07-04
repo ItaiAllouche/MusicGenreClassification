@@ -118,7 +118,8 @@ docker run --name gtzan --rm -it --ipc=host --gpus=all -v $PWD:/home huggingface
 ```
 
 ### Run the model
-Go to the <a href="https://www.kaggle.com/datasets/andradaolteanu/gtzan-dataset-music-genre-classification">model</a> in hugging face.
+Go to the <a href="https://www.kaggle.com/datasets/andradaolteanu/gtzan-dataset-music-genre-classification">Model</a> in hugging face.
+<br>
 <img src="/img/run_in_hugging_face.jpeg">
 
 Press "Download ZIP" under the green button `Clone or download` or use `git` to clone the repository using the 
