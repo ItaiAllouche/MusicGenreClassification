@@ -19,8 +19,8 @@ Technion ECE 046211 - Deep Learning
   * [30_sec model](#30_sec-model)
   * [15_sec model](#15_sec-model)
   * [10_sec model](#10_sec-model)
-    + [Running The Model](#running-the-model)
-    + [Running Locally](#running-locally)
+    + [Train the 30s model](#train-the-30s-model)
+    + [Run the model](#run-the-model)
   * [Installation Instructions](#installation-instructions)
 
 ## Background
@@ -112,36 +112,14 @@ performance:
 <img src="/img/10sec_test.jpeg">
 <br>
 
-
-
-
-### Running The Model
+### Train the 30s model
 ```bash
-printf fyhfhgv
+docker run --name gtzan --rm -it --ipc=host --gpus=all -v $PWD:/home huggingface/transformers-pytorch-gpu python3 /home/train_30s_model.py
 ```
-|Service      | Usage |
-|-------------|---------|
-|`img`| Contains images for README.md file  |
-|Binder| Render, view and edit the notebooks (limited time) |
-|Google Colab| Render, view, edit and save the notebooks to Google Drive (limited time) |
 
-
-Jupyter Nbviewer:
-
-[![nbviewer](https://raw.githubusercontent.com/taldatech/ee046211-deep-learning/main/assets/nbviewer_badge.svg)](https://nbviewer.jupyter.org/github/taldatech/ee046202-unsupervised-learning-data-analysis/tree/master/)
-
-
-Press on the "Open in Colab" button below to use Google Colab:
-
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/taldatech/ee046202-unsupervised-learning-data-analysis)
-
-Or press on the "launch binder" button below to launch in Binder:
-
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/taldatech/ee046202-unsupervised-learning-data-analysis/master)
-
-Note: creating the Binder instance takes about ~5-10 minutes, so be patient
-
-### Running Locally
+### Run the model
+Go to the <a href="https://www.kaggle.com/datasets/andradaolteanu/gtzan-dataset-music-genre-classification">model</a> in hugging face.
+<img src="/img/run_in_hugging_face.jpeg">
 
 Press "Download ZIP" under the green button `Clone or download` or use `git` to clone the repository using the 
 following command: `git clone https://github.com/taldatech/ee046211-deep-learning.git` (in cmd/PowerShell in Windows or in the Terminal in Linux/Mac)
