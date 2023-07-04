@@ -19,8 +19,8 @@ Technion ECE 046211 - Deep Learning
   * [30s model](#30s-model)
   * [15s model](#15s-model)
   * [10s model](#10s-model)
-    + [Train the 30s model](#train-the-30s-model)
-    + [Run the model - from huggingface](#Run-the-model---from-huggingface)
+    + [Train 30s model](#train-30s-model)
+    + [Run the model - from huggingface 🤗](#Run-the-model---from-huggingface-🤗)
     + [Run the model - using python](#Run-the-model---using-python)
 
 ## Background
