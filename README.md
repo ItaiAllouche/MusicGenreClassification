@@ -19,7 +19,7 @@ Technion ECE 046211 - Deep Learning
   * [30_sec model](#30_sec-model)
   * [15_sec model](#15_sec-model)
   * [10_sec model](#10_sec-model)
-    + [Running Online](#running-online)
+    + [Running The Model](#running-the-model)
     + [Running Locally](#running-locally)
   * [Installation Instructions](#installation-instructions)
 
@@ -60,7 +60,6 @@ The tracks are all 22050Hz Mono 16-bit audio files in .wav format.
 |`train_10s_model.py`| train the model on 10 sec-long tracks  |
 |`eval_model.py`| evaluate the model.|
 
-<br>
 ## 30_sec model
 This model was trained on 30 sec long tracks.
 <br>
@@ -77,7 +76,6 @@ performance:
 
 <img src="/img/30sec_test.jpeg">
 
-<br>
 ## 15_sec model
 <br>
 This model was trained on 15 sec long tracks.
@@ -95,7 +93,6 @@ performance:
 <br>
 
 <img src="/img/15sec_test.jpeg">
-<br>
 
 ## 10_sec model
 This model was trained on 10 sec long tracks.
@@ -118,11 +115,13 @@ performance:
 
 
 
-### Running Online
-
+### Running The Model
+```bash
+printf fyhfhgv
+```
 |Service      | Usage |
 |-------------|---------|
-|Jupyter Nbviewer| Render and view the notebooks (can not edit) |
+|`img`| Contains images for README.md file  |
 |Binder| Render, view and edit the notebooks (limited time) |
 |Google Colab| Render, view, edit and save the notebooks to Google Drive (limited time) |
 
